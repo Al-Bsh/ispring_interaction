@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clickable Image Map</title>
+    <style>
+        .hover-highlight area {
+            transition: background-color 0.3s ease;
+        }
+        .hover-highlight area:hover {
+            background-color: rgba(255, 255, 0, 0.5); /* Подсветка желтым цветом */
+        }
+    </style>
+</head>
+<body>
+    <img src="ваше_изображение.jpg" alt="Image with clickable areas" usemap="#image-map" style="width: 100%; height: auto;">
+    <map name="image-map" class="hover-highlight">
+        <area shape="rect" coords="34,44,270,350" href="#" onclick="navigateToSlide(2)">
+        <area shape="rect" coords="290,172,333,250" href="#" onclick="navigateToSlide(3)">
+        <area shape="rect" coords="337,300,440,400" href="#" onclick="navigateToSlide(4)">
+    </map>
+
+    <script>
+        function navigateToSlide(slideNumber) {
+            // Этот код будет работать только в контексте iSpring
+            window.location.href = `#${slideNumber}`;
+        }
+    </script>
+</body>
+</html>
